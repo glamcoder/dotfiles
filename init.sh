@@ -62,3 +62,9 @@ if [ -f ~/.vim ]; then
     cp ~/.vim ~/.vim_old
 fi
 ln -s .vim ~/.vim
+
+# .dotfiles
+if [ -d ~/.dotfiles ]; then
+    cp -R ~/.dotfiles ~/.dotfiles_old
+fi
+ln -s ./ ~/.dotfiles
