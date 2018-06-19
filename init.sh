@@ -1,70 +1,69 @@
 #!/bin/sh
 
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
 # .alias
 if [ -f ~/.alias ]; then
-    cp ~/.alias ~/.alias_old
+    mv ~/.alias ~/.alias_old
 fi
-ln -s .alias ~/.alias
+ln -s $DIR/.alias ~/.alias
 
 # .bash_colors
 if [ -f ~/.bash_colors ]; then
-    cp ~/.bash_colors ~/.bash_colors_old
+    mv ~/.bash_colors ~/.bash_colors_old
 fi
-ln -s .bash_colors ~/.bash_colors
+ln -s $DIR/.bash_colors ~/.bash_colors
 
 # .bash_profile
 if [ -f ~/.bash_profile ]; then
-    cp ~/.bash_profile ~/.bash_profile_old
+    mv ~/.bash_profile ~/.bash_profile_old
 fi
-ln -s .bash_profile ~/.bash_profile
+ln -s $DIR/.bash_profile ~/.bash_profile
 
 # .bashrc
 if [ -f ~/.bashrc ]; then
-    cp ~/.bashrc ~/.bashrc_old
+    mv ~/.bashrc ~/.bashrc_old
 fi
-ln -s .bashrc ~/.bashrc
+ln -s $DIR/.bashrc ~/.bashrc
 
 # .gitconfig
 if [ -f ~/.gitconfig ]; then
     cp ~/.gitconfig ~/.gitconfig_old
 fi
-ln -s .gitconfig ~/.gitconfig
+ln -s $DIR/.gitconfig ~/.gitconfig
 
 # .myclirc
 if [ -f ~/.myclirc ]; then
-    cp ~/.myclirc ~/.myclirc_old
+    mv ~/.myclirc ~/.myclirc_old
 fi
-ln -s .myclirc ~/.myclirc
+ln -s $DIR/.myclirc ~/.myclirc
 
 # .tmux.conf
 if [ -f ~/.tmux.conf ]; then
-    cp ~/.tmux.conf ~/.tmux.conf_old
+    mv ~/.tmux.conf ~/.tmux.conf_old
 fi
-ln -s .tmux.conf ~/.tmux.conf
+ln -s $DIR/.tmux.conf ~/.tmux.conf
 
 # .vimrc
 if [ -f ~/.vimrc ]; then
-    cp ~/.vimrc ~/.vimrc_old
+    mv ~/.vimrc ~/.vimrc_old
 fi
-ln -s .vimrc ~/.vimrc
+ln -s $DIR/.vimrc ~/.vimrc
 
 # diff-highlight
 if [ -f ~/diff-highlight ]; then
-    cp ~/diff-highlight ~/diff-highlight_old
+    mv ~/diff-highlight ~/diff-highlight_old
 fi
-ln -s diff-highlight ~/diff-highlight
+ln -s $DIR/diff-highlight ~/diff-highlight
 
 # .vim
 if [ -d ~/.vim ]; then
-    cp -R ~/.vim ~/.vim_old
+    mv ~/.vim ~/.vim_old
 fi
-if [ -f ~/.vim ]; then
-    cp ~/.vim ~/.vim_old
-fi
-ln -s .vim ~/.vim
+ln -s $DIR/.vim ~/.vim
 
 # .dotfiles
 if [ -d ~/.dotfiles ]; then
-    cp -R ~/.dotfiles ~/.dotfiles_old
+    mv -R ~/.dotfiles ~/.dotfiles_old
 fi
-ln -s ./ ~/.dotfiles
+ln -s $DIR ~/.dotfiles
