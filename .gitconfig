@@ -1,0 +1,60 @@
+[alias]
+	hist = log --graph --color=always --pretty='[%C(cyan)%h%Creset]%C(bold cyan)%d%Creset %s' --all
+	co = checkout
+	branches = for-each-ref --sort=-committerdate refs/heads/
+
+	info = remote -v
+    st = status -s
+    unstage = reset HEAD
+    hreset  = reset --hard
+
+    r = pull --rebase
+    ci = commit --verbose
+    cm = commit -m
+
+    # Note, branch does not checkout automatically
+    b  = checkout --track -b
+    # colors-words: valuable when diff on a long line, show just changed words
+    d      = !git status -s && git diff --no-prefix
+    g      = grep --no-index --exclude-standard --ignore-case --heading --full-name --line-number --show-function --context 1 --break --extended-regexp
+    l      = log --stat --abbrev-commit
+    p      = log --stat --abbrev-commit --patch --ignore-all-space
+    # Use this one to also search for patches involving a word, e.g. function name
+    # (add -m to also search in merge commits)
+    s      = log --stat --abbrev-commit --patch --ignore-all-space -S
+    me     = log -p --stat --abbrev-commit --ignore-all-space --author mogelashvili
+    auth   = log -p --stat --abbrev-commit --ignore-all-space --author
+    one    = log --pretty='%ad %h %s'
+	lg     = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	lgme   = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --author=Mogelashvili
+
+    # Commits on this branch that aren't on upstream
+    log-vs-master  = log --stat HEAD ^origin/master
+    log-vs-trunk   = log --stat HEAD ^origin/trunk
+    # Diff only what's new in this branch since the merge-base
+    diff-vs-master = diff origin/master...HEAD
+    diff-vs-trunk  = diff origin/trunk...HEAD
+    prune-tags = !sh -c 'git fetch --prune "${1:-origin}" +refs/tags/*:refs/tags/*' $1
+
+[color]
+	ui = auto
+	diff = auto
+	interactive = auto
+	status = auto
+	branch = auto
+[pull]
+    rebase = true
+[push]
+    default = upstream
+[grep]
+    lineNumber = true
+    extendedRegexp = true
+[diff]
+    noprefix = true
+[log]
+    decorate = short
+[user]
+	name = Georgiy Mogelashvili
+    email = gmogelashvili@gmail.com
+[core]
+    pager = ~/.dotfiles/diff-highlight | less
