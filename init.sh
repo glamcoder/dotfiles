@@ -50,12 +50,6 @@ if [ -f ~/.vimrc ]; then
 fi
 ln -s $DIR/.vimrc ~/.vimrc
 
-# diff-highlight
-if [ -f ~/diff-highlight ]; then
-    mv ~/diff-highlight ~/diff-highlight_old
-fi
-ln -s $DIR/diff-highlight ~/diff-highlight
-
 # .vim
 if [ -d ~/.vim ]; then
     mv ~/.vim ~/.vim_old

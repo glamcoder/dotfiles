@@ -35,7 +35,6 @@
     diff-vs-master = diff origin/master...HEAD
     diff-vs-trunk  = diff origin/trunk...HEAD
     prune-tags = !sh -c 'git fetch --prune "${1:-origin}" +refs/tags/*:refs/tags/*' $1
-
 [color]
 	ui = auto
 	diff = auto
