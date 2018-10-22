@@ -33,7 +33,7 @@ set number                      " Enable line numbers
 set numberwidth=3               " Line number width
 set laststatus=2
 set complete=.,w,b,u
-set mouse=a
+set mouse=r
 
 let g:ctrlp_max_files = 0
 let g:ctrlp_user_command = 'find %s -type f'
