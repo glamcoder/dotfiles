@@ -2,12 +2,16 @@
 #
 alias vi=vim
 
-# alias ls='ls --color=yes'
+alias ls='ls --color=yes'
 # alias grep='grep --color'
 
+# git
 alias gpp='git pull --rebase && git push'
 alias g=git
 alias gg='git g'
 alias gs='git status'
 alias gd='git diff'
 alias gds='git diff --staged'
+
+# k8s
+alias k=kubectl
